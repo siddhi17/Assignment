@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="data"
+            type="com.example.assignment.viewModels.BooksViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.BooksActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView_back"
+                    android:layout_width="@dimen/margin_20"
+                    android:layout_height="@dimen/margin_20"
+                    android:onClick="@{(v)->click.onClick(v)}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_back" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_title_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="fiction"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@color/purple_200"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintStart_toEndOf="@+id/imageView_back"
+                    android:layout_marginStart="@dimen/margin_12"
+                    android:textSize="@dimen/text_size_30sp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/margin_10"
+        app:cardBackgroundColor="@color/white_shade"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_10"
+        app:cardCornerRadius="@dimen/margin_4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:onClick="@{(v)->click.onClick(v)}"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_16" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/search"
+                android:textCursorDrawable="@drawable/cursor_drawable"
+                android:cursorVisible="true"
+                android:background="@null"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_margin="@dimen/margin_14"
+                android:textColor="@color/dark_grey"
+                android:text="@={data.search}"
+                android:textSize="@dimen/text_size_16"
+                android:layout_toRightOf="@id/imageView_search"
+                android:layout_toEndOf="@id/imageView_search" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_16"
+                android:onClick="@{(v)->click.onClick(v)}"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:layout_marginEnd="@dimen/margin_16" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_books"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background = "@color/white_shade"
+        android:layout_margin="@dimen/margin_16"
+        app:layout_constraintTop_toBottomOf="@id/card_view_search" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

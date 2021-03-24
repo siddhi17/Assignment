@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="data"
+            type="com.example.assignment.viewModels.BooksViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MainActivity"
+        android:background="@drawable/pattern">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_16">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/gutenberg_project"
+        android:textSize="@dimen/text_size_48"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textColor="@color/purple_200"
+        android:layout_marginTop="@dimen/margin_30"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_desc"
+        android:textSize="@dimen/text_size_20sp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textColor="@color/dark_grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        android:text="@string/desc"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_desc">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_fiction"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp"
+            app:cardElevation="@dimen/margin_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:onClick="@{(v)->click.onClick(v)}"
+            android:layout_marginTop="@dimen/margin_20">
+
+            <RelativeLayout
+                android:id="@+id/rl_fiction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@+id/img_fiction"
+                    android:layout_width="@dimen/margin_26"
+                    android:layout_height="@dimen/margin_26"
+                    android:src="@drawable/ic_fiction"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fiction"
+                    android:layout_toRightOf="@id/img_fiction"
+                    android:layout_toEndOf="@id/img_fiction"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <ImageView
+                    android:layout_width="@dimen/margin_24"
+                    android:layout_height="@dimen/margin_24"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_drama"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp"
+            app:cardElevation="@dimen/margin_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:onClick="@{(v)->click.onClick(v)}"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_drama"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@+id/img_drama"
+                    android:layout_width="@dimen/margin_26"
+                    android:layout_height="@dimen/margin_26"
+                    android:src="@drawable/ic_drama"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drama"
+                    android:layout_toRightOf="@id/img_drama"
+                    android:layout_toEndOf="@id/img_drama"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <ImageView
+                    android:layout_width="@dimen/margin_24"
+                    android:layout_height="@dimen/margin_24"
+                    android:src="@drawable/ic_next"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_humor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp"
+            app:cardElevation="@dimen/margin_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:onClick="@{(v)->click.onClick(v)}"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_humor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@+id/img_humor"
+                    android:layout_width="@dimen/margin_26"
+                    android:layout_height="@dimen/margin_26"
+                    android:src="@drawable/ic_humour"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/humor"
+                    android:layout_toRightOf="@id/img_humor"
+                    android:layout_toEndOf="@id/img_humor"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <ImageView
+                    android:layout_width="@dimen/margin_24"
+                    android:layout_height="@dimen/margin_24"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_politics"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp"
+            app:cardElevation="@dimen/margin_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:onClick="@{(v)->click.onClick(v)}"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_politics"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@+id/img_politics"
+                    android:layout_width="@dimen/margin_26"
+                    android:layout_height="@dimen/margin_26"
+                    android:src="@drawable/ic_politics"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/politics"
+                    android:layout_toRightOf="@id/img_politics"
+                    android:layout_toEndOf="@id/img_politics"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <ImageView
+                    android:layout_width="@dimen/margin_24"
+                    android:layout_height="@dimen/margin_24"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_philosophy"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp"
+            app:cardElevation="@dimen/margin_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:onClick="@{(v)->click.onClick(v)}"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_philosophy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@+id/img_philosophy"
+                    android:layout_width="@dimen/margin_26"
+                    android:layout_height="@dimen/margin_26"
+                    android:src="@drawable/ic_philosophy"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/philosophy"
+                    android:layout_toRightOf="@id/img_philosophy"
+                    android:layout_toEndOf="@id/img_philosophy"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <ImageView
+                    android:layout_width="@dimen/margin_24"
+                    android:layout_height="@dimen/margin_24"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_history"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp"
+            app:cardElevation="@dimen/margin_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:onClick="@{(v)->click.onClick(v)}"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_history"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@+id/img_history"
+                    android:layout_width="@dimen/margin_26"
+                    android:layout_height="@dimen/margin_26"
+                    android:src="@drawable/ic_history"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/history"
+                    android:layout_toRightOf="@id/img_history"
+                    android:layout_toEndOf="@id/img_history"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <ImageView
+                    android:layout_width="@dimen/margin_24"
+                    android:layout_height="@dimen/margin_24"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_adventure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp"
+            app:cardElevation="@dimen/margin_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/margin_4"
+            android:onClick="@{(v)->click.onClick(v)}"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_adventure"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_10">
+
+                <ImageView
+                    android:id="@+id/img_adventure"
+                    android:layout_width="@dimen/margin_26"
+                    android:layout_height="@dimen/margin_26"
+                    android:src="@drawable/ic_adventure"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/adventure"
+                    android:layout_toRightOf="@id/img_adventure"
+                    android:layout_toEndOf="@id/img_adventure"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+                <ImageView
+                    android:layout_width="@dimen/margin_24"
+                    android:layout_height="@dimen/margin_24"
+                    android:src="@drawable/ic_next"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

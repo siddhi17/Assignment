@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Assignment</string>
+    <string name="gutenberg_project">Gutenberg Project</string>
+    <string name="desc">A social cataloging website that allows you to freely search its database of books, annotations, and reviews.</string>
+    <string name="fiction">Fiction</string>
+    <string name="drama">Drama</string>
+    <string name="humor">Humor</string>
+    <string name="politics">Politics</string>
+    <string name="philosophy">Philosophy</string>
+    <string name="history">History</string>
+    <string name="adventure">Adventure</string>
+    <string name="error_internet">Please check if internet is connected</string>
+    <string name="error_exception">Something went wrong, please try again later</string>
+    <string name="search">Search</string>
+</resources>
